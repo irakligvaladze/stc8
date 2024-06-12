@@ -49,10 +49,7 @@ LD_CFLAGS    += $(ARCH_FLAGS) $(DEBUG_FLAGS) $(OPT) \
 #     -r      replace existing or insert new file(s) into the archive
 TGT_AFLAGS    += -rcs
 
-# Flashing tool
-WCHISP ?= stcgal
-ARCH=stc8
-PORT=/dev/ttyUSB0
+
 
 .PHONY: all clean flash
 

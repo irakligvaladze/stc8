@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 #include "fw_sys.h"
 
 /**
@@ -40,6 +41,8 @@ __CODE uint8_t  ticks_us    = (__CONF_FOSC / ((__CONF_CLKDIV == 0)? 1 : __CONF_C
 void SYS_SetClock(void)
 {
 #if defined (SDCC) || defined (__SDCC)
+
+
     uint16_t i = 0; uint8_t j = 5;
     P_SW2 = 0x80;
     if (CLKDIV != (__CONF_CLKDIV))

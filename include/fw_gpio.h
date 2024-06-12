@@ -101,7 +101,7 @@ typedef enum
                             P5M1 = P5M1 & ~(__PINS__) | (((__MODE__) & 0x02)? (__PINS__) : 0x00); \
                         } while(0)
 
-#if (__CONF_MCU_TYPE == 1  ) || (__CONF_MCU_TYPE == 3  )
+#if (__CONF_MCU_TYPE == 1  ) || (__CONF_MCU_TYPE == 3  ) || (__CONF_MCU_TYPE == 4  )
 #define GPIO_P6_SetMode(__PINS__, __MODE__) do {  \
                             P6M0 = P6M0 & ~(__PINS__) | (((__MODE__) & 0x01)? (__PINS__) : 0x00); \
                             P6M1 = P6M1 & ~(__PINS__) | (((__MODE__) & 0x02)? (__PINS__) : 0x00); \

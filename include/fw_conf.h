@@ -68,7 +68,7 @@
 #define MCU_MODEL_STC8H8K60U        0x31
 #define MCU_MODEL_STC8H8K64U        0x32
 
-
+#define MCU_MDOEL_STC8A8K64S4       0x33
 
 #ifndef __CONF_FOSC
     #define __CONF_FOSC 24000000UL
@@ -97,9 +97,10 @@
 #ifndef __CONF_MCU_MODEL
     #define __CONF_MCU_MODEL MCU_MODEL_STC8H1K08
 #endif
-
+    
 #if (__CONF_MCU_MODEL == MCU_MODEL_STC8A8K64D4)
     #define __CONF_MCU_TYPE 1
+
 #elif (__CONF_MCU_MODEL == MCU_MODEL_STC8G1K04   ) || \
     (__CONF_MCU_MODEL == MCU_MODEL_STC8G1K08     ) || \
     (__CONF_MCU_MODEL == MCU_MODEL_STC8G1K12     ) || \
@@ -147,6 +148,9 @@
     (__CONF_MCU_MODEL == MCU_MODEL_STC8H8K60U    ) || \
     (__CONF_MCU_MODEL == MCU_MODEL_STC8H8K64U    )
     #define __CONF_MCU_TYPE 3
+#elif (__CONF_MCU_MODEL == MCU_MODEL_STC8A8K64S4)
+    #define __CONF_MCU_TYPE 4
+
 #endif
 
 #if (__CONF_MCU_TYPE == 1  )
@@ -157,6 +161,8 @@
 #elif (__CONF_MCU_TYPE == 3  )
     #include "fw_reg_stc8h.h"
     #include "fw_cid_stc8h.h"
+#elif (__CONF_MCU_TYPE == 4 )
+    #include "fw_reg_stc8a8k64s4a12.h"
 #endif
 
 #endif

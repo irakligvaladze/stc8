@@ -28,7 +28,7 @@
     #define __REENTRANT  
     #define SBIT(name, addr, bit)    volatile bool           name
     #define SFR(name, addr)          volatile unsigned char  name
-    #define SFRX(addr)               (*(unsigned char volatile *)(addr))
+    #define SFRX(name, addr)         (*(unsigned char volatile *)(addr))
     #define SFR16X(addr)             (*(unsigned char volatile *)(addr))
     #define INTERRUPT(name, vector)  void name (void) 
     #define INTERRUPT_USING(name, vector, regnum) void name (void)
@@ -44,7 +44,7 @@
     #define __REENTRANT  __reentrant
     #define SBIT(name, addr, bit)  __sbit  __at(addr+bit)                    name
     #define SFR(name, addr)        __sfr   __at(addr)                        name
-    #define SFRX(addr)              (*(unsigned char volatile __xdata *)(addr))
+    #define SFRX(name, addr)       __sfr16 __at(addr)                        name
     #define SFR16X(addr)            (*(unsigned int  volatile __xdata *)(addr))
 
     #define INTERRUPT(name, vector) void name (void) __interrupt (vector)
@@ -61,7 +61,7 @@
     #define __REENTRANT  reentrant
     #define SBIT(name, addr, bit)  sbit  name = addr^bit
     #define SFR(name, addr)        sfr   name = addr
-    #define SFRX(addr)              (*(unsigned char volatile xdata *)(addr))
+    #define SFRX(name, addr)        (*(unsigned char volatile xdata *)(addr))
     #define SFR16X(addr)            (*(unsigned int  volatile xdata *)(addr))
 
     #define INTERRUPT(name, vector) void name (void) interrupt vector
